@@ -11,7 +11,7 @@ class RegisterController extends Controller {
             
             $User = M('User');
             
-            $this->success('注册成功');
+            $this->success($User.$email);
         } else {
             $this->error('非法请求');
         }
