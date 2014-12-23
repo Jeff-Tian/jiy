@@ -9,7 +9,11 @@ class RegisterController extends Controller {
             $email = I('email/s', '', 'email');
             $password = I('password/s');
             
-            $User = M('User');
+            try{
+                $User = M('User');
+            }catch(Exception $e){
+                echo 'Caught exception: ', $e->getMessage(), "\n";
+            }
             
             $this->success($User.$email);
         } else {
